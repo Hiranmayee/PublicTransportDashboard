@@ -1,21 +1,21 @@
 package org.dahsboard.com.controller;
 
-import org.retail.model.Bus;
-import org.retail.service.ProductService;
-import org.retail.service.RegisterService;
+import org.dahsboard.com.model.Bus;
+import org.dahsboard.com.service.BusService;
+import org.dahsboard.com.service.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
-@Path(value = "/myRetail/products")
+@Path(value = "/myDashboard/buses")
 public class BusApi {
 
     @Autowired
 	Bus bus;
 
 	@Autowired
-	ProductService productService;
+	BusService busService;
 
 	@Autowired
 	RegisterService registerService;
@@ -26,7 +26,7 @@ public class BusApi {
 	public String showProductDetails (@PathParam("id") int productId) throws Exception{
 		    bus.setProductId(productId);
 
-		return productService.getProduct(productId);
+		return busService.getProduct(productId);
 	}
 
 	@PUT
@@ -35,7 +35,8 @@ public class BusApi {
 	public String updateProductDetails(@PathParam("id") int productId) {
 		bus.setProductId(productId);
 
-		return productService.modifyProduct(bus);
+		//return busService.modifyProduct(bus);
+		return "This is in progress";
 	}
 
 

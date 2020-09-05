@@ -9,7 +9,7 @@ import com.mongodb.client.MongoDatabase;
 import org.apache.log4j.Logger;
 import org.bson.Document;
 import org.bson.conversions.Bson;
-import org.retail.model.Bus;
+import org.dahsboard.com.model.Bus;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
