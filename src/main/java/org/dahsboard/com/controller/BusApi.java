@@ -23,41 +23,41 @@ public class BusApi {
 
 	@GET
 	@Path("/{id}")
-	public String showBusDetails (@PathParam("id") int productId) throws Exception{
-		    bus.setProductId(productId);
+	public String showBusDetails (@PathParam("id") int busId) throws Exception{
+		    bus.setBusID(busId);
 
-		return busService.getProduct(productId);
+		return busService.getBus(busId);
 	}
 
     @GET
     @Path("/{id}")
-    public String showBusLocationDetailsOnMap (@PathParam("id") int productId) throws Exception{
-        bus.setProductId(productId);
+    public String showBusLocationDetailsOnMap (@PathParam("id") int busId) throws Exception{
+        bus.setBusID(busId);
 
-        return busService.getProduct(productId);
+        return busService.getBus(busId);
     }
 
     @GET
     @Path("/{id}")
-    public String showBusOccupanyDetails (@PathParam("id") int productId) throws Exception{
-        bus.setProductId(productId);
+    public String showBusOccupanyDetails (@PathParam("id") int busId) throws Exception{
+        bus.setBusID(busId);
 
-        return busService.getProduct(productId);
+        return busService.getBus(busId);
     }
 
     @GET
     @Path("/{id}")
-    public String showBusOccupanyDetailsWithColorNearlingCapacity (@PathParam("id") int productId) throws Exception{
-        bus.setProductId(productId);
+    public String showBusOccupanyDetailsWithColorNearlingCapacity (@PathParam("id") int busId) throws Exception{
+        bus.setBusID(busId);
 
-        return busService.getProduct(productId);
+        return busService.getBus(busId);
     }
 
     @PUT
 	@Path("/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public String updateBustDetails(@PathParam("id") int productId) {
-		bus.setProductId(productId);
+	public String updateBustDetails(@PathParam("id") int busId) {
+        bus.setBusID(busId);
 
 		//return busService.modifyProduct(bus);
 		return "This is in progress";

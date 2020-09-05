@@ -4,33 +4,31 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Bus {
-    private int productId;
-    private String productName;
-    private ProductPrice productPrice;
+    private int busID;
+    private String busName;
+    private BusCapacity busCapacity;
 
-    public int getProductId() {
-        return productId;
+    public int getBusID() {
+        return busID;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setBusID(int busID) {
+        this.busID = busID;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getBusName() {
+        return busName;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setBusName(String busName) {
+        this.busName = busName;
     }
 
-    public ProductPrice getProductPrice() {
-        return productPrice;
+    public BusCapacity getBusCapacity() {
+        return busCapacity;
     }
 
-    public void setProductPrice(ProductPrice productPrice) {
-        this.productPrice = productPrice;
+    public void setBusCapacity(BusCapacity busCapacity) {
+        this.busCapacity = busCapacity;
     }
-
-
 }

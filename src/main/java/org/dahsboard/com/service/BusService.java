@@ -18,12 +18,12 @@ public class BusService {
     BusDao busDao;
 
 
-    public String getProduct(int productID) {
-        return busDao.getSelectiveProduct(productID);
+    public String getBus(int busId) {
+        return busDao.getSelectiveBus(busId);
     }
 
     public String getAllProduct() {
-        return busDao.getAllProducts();
+        return busDao.getAllBuses();
     }
 
 

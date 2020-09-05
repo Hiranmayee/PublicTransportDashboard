@@ -3,7 +3,7 @@ package org.dahsboard.com.model;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProductPrice {
+public class BusCapacity {
 
     private double productPrice;
     private String productCurrency;

@@ -46,7 +46,7 @@ public class BusDao {
     }
 
         //Fetching in all products
-    public  String getAllProducts() {
+    public  String getAllBuses() {
         log.info("Fetching all products from the collection");
         System.out.println("Fetching all products from the collection");
 
@@ -67,7 +67,7 @@ public class BusDao {
     }
 
     // Fetch a selective Bus from the mongo collection.
-    public String getSelectiveProduct(int product) {
+    public String getSelectiveBus(int product) {
         log.info("Fetching a particular document from the collection");
         // Performing a read operation on the collection.
         FindIterable<Document> fi = dbConnection().find();
