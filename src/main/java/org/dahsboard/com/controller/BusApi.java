@@ -1,10 +1,13 @@
 package org.dahsboard.com.controller;
 
 import org.dahsboard.com.model.Bus;
+import org.dahsboard.com.service.BusCapacityImpl;
 import org.dahsboard.com.service.BusService;
 import org.dahsboard.com.service.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.*;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -25,13 +28,16 @@ public class BusApi {
 	@Autowired
     ModelAndView modelAndView;
 
+	@Autowired
+    BusCapacityImpl busCapacity;
+
 	@GET
 	@Path("/{id}")
-	public ModelAndView showBusLocationDetailsOnMap (@PathParam("id") int busId) throws Exception{
+	public void showBusLocationDetailsOnMap (@PathParam("id") int busId) throws Exception{
 		    bus.setBusID(busId);
 		    System.out.println(" in controller");
 		    modelAndView.setViewName("busLocationView");
-      return modelAndView;
+
 	}
 
     @GET
@@ -51,19 +57,15 @@ public class BusApi {
     }*/
 
     @GET
-    @Path("/{id}")
-    public String showBusOccupanyDetails (@PathParam("id") int busId) throws Exception{
-        bus.setBusID(busId);
-
-        return busService.getBus(busId);
+    @Path("/getAllOccupancyDetails")
+    public Map<String, Integer> showBusOccupanyDetails () throws Exception{
+        return busCapacity.showBusOccupanyDetails();
     }
 
     @GET
-    @Path("/{id}")
-    public String showBusOccupanyDetailsWithColorNearlingCapacity (@PathParam("id") int busId) throws Exception{
-        bus.setBusID(busId);
-
-        return busService.getBus(busId);
+    @Path("/showColorCapacity")
+    public String showBusOccupanyDetailsWithColorNearlingCapacity () throws Exception{
+        return busCapacity.showBusOccupanyDetailsWithColorNearlingCapacity();
     }
 
     @PUT
