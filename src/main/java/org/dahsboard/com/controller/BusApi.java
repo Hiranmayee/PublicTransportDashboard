@@ -4,6 +4,7 @@ import org.dahsboard.com.model.Bus;
 import org.dahsboard.com.service.BusService;
 import org.dahsboard.com.service.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -21,21 +22,33 @@ public class BusApi {
 	RegisterService registerService;
 
 
+	@Autowired
+    ModelAndView modelAndView;
+
 	@GET
 	@Path("/{id}")
-	public String showBusDetails (@PathParam("id") int busId) throws Exception{
+	public ModelAndView showBusLocationDetailsOnMap (@PathParam("id") int busId) throws Exception{
 		    bus.setBusID(busId);
-
-		return busService.getBus(busId);
+		    System.out.println(" in controller");
+		    modelAndView.setViewName("busLocationView");
+      return modelAndView;
 	}
 
     @GET
-    @Path("/{id}")
-    public String showBusLocationDetailsOnMap (@PathParam("id") int busId) throws Exception{
+    @Path("/")
+    public String showAllBusesDetails (@PathParam("id") int busId) throws Exception{
         bus.setBusID(busId);
 
         return busService.getBus(busId);
     }
+
+    /*@GET
+    @Path("/{id}")
+    public String showDetails(@PathParam("id") int busId) throws Exception{
+        bus.setBusID(busId);
+
+        return busService.getBus(busId);
+    }*/
 
     @GET
     @Path("/{id}")

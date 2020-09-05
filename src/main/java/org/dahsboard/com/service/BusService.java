@@ -23,7 +23,9 @@ public class BusService {
     }
 
     public String getAllProduct() {
+
         return busDao.getAllBuses();
+        //return "Empty as per now";
     }
 
 

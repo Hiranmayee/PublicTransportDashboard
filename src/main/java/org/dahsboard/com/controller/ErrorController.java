@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller("error")
 public class ErrorController {
-	
-	@ExceptionHandler(Exception.class)
+
+	//@ExceptionHandler(Exception.class)
 	public ModelAndView handleException
 		(HttpServletRequest request, Exception ex){
 		ModelAndView mv = new ModelAndView();
