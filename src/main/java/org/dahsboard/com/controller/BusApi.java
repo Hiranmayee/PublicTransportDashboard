@@ -23,16 +23,40 @@ public class BusApi {
 
 	@GET
 	@Path("/{id}")
-	public String showProductDetails (@PathParam("id") int productId) throws Exception{
+	public String showBusDetails (@PathParam("id") int productId) throws Exception{
 		    bus.setProductId(productId);
 
 		return busService.getProduct(productId);
 	}
 
-	@PUT
+    @GET
+    @Path("/{id}")
+    public String showBusLocationDetailsOnMap (@PathParam("id") int productId) throws Exception{
+        bus.setProductId(productId);
+
+        return busService.getProduct(productId);
+    }
+
+    @GET
+    @Path("/{id}")
+    public String showBusOccupanyDetails (@PathParam("id") int productId) throws Exception{
+        bus.setProductId(productId);
+
+        return busService.getProduct(productId);
+    }
+
+    @GET
+    @Path("/{id}")
+    public String showBusOccupanyDetailsWithColorNearlingCapacity (@PathParam("id") int productId) throws Exception{
+        bus.setProductId(productId);
+
+        return busService.getProduct(productId);
+    }
+
+    @PUT
 	@Path("/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public String updateProductDetails(@PathParam("id") int productId) {
+	public String updateBustDetails(@PathParam("id") int productId) {
 		bus.setProductId(productId);
 
 		//return busService.modifyProduct(bus);
